@@ -1,6 +1,6 @@
 Apresentar previa para o jogo da velha -LOGICA-
 
-inicio 
+INICIO
 
 (JogoDaVelha) Começar com o jogador 'X'
 
@@ -21,5 +21,6 @@ Verificar diagonais
 
 
 (Verificar Empate) Ainda existem células vazias, portanto não é um empate
+FIM
+Todas as células estão preenchidas e não há um vencedor, então é um empate (VELHA)
 
-Todas as células estão preenchidas e não há um vencedor, então é um empate
