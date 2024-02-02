@@ -1,1 +1,25 @@
+Apresentar previa para o jogo da velha -LOGICA-
 
+inicio 
+
+(JogoDaVelha) Começar com o jogador 'X'
+
+(InicializarTabuleiro)
+Alternar entre os jogadores
+
+Lógica para verificar se há um vencedor
+Implementação pendente
+
+Lógica para verificar se há um empat
+Implementação pendente
+
+Começar com o jogador 'X' novamente
+
+Verificar linhas
+
+Verificar diagonais
+
+
+(Verificar Empate) Ainda existem células vazias, portanto não é um empate
+
+Todas as células estão preenchidas e não há um vencedor, então é um empate
