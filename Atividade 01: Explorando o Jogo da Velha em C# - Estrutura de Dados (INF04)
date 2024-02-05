@@ -1,0 +1,197 @@
+Aula 05/02 - ATV 01
+
+Questão 01 - Representação do Tabuleiro 
+Descreva como o tabuleiro do jogo da velha é representado no código em C#.
+R: No código em C#, o tabuleiro do jogo da velha é representado como uma matriz 3x3 de caracteres. Cada célula da matriz pode conter um espaço em branco (' ') para indicar uma posição vazia, ou uma marca 'X' ou 'O' para indicar a jogada de um jogador.
+
+Questão 02 - Inicialização do Tabuleiro
+Qual é o propósito da função InitializeBoard() no código? Como ela funciona?
+R: A função InitializeBoard() no código tem o propósito de inicializar o tabuleiro do jogo da velha com todas as células vazias (' '). Ela percorre todas as células do tabuleiro e as define como espaços em branco, garantindo que o tabuleiro comece vazio antes do início de uma nova partida.
+
+Questão 03:Alternância de Jogadores
+Como é implementada a alternância entre os jogadores X e O no jogo da velha?
+R: A alternância entre os jogadores X e O é implementada usando uma variável booleana chamada playerX. Ela é inicializada como verdadeira (true) para indicar que é a vez do jogador X jogar. Após cada jogada bem-sucedida, o valor de playerX é invertido, alternando entre os jogadores X e O. Isso garante que os jogadores façam suas jogadas de forma alternada durante o jogo.
+
+Questão 04: Condição de Vitória
+Como o programa determina se um jogador venceu o jogo? Explique a condição de vitória.
+R: O programa determina se um jogador venceu o jogo verificando se três células consecutivas na mesma linha, coluna ou diagonal do tabuleiro estão preenchidas com a mesma marca (X ou O). Se essa condição for verdadeira para qualquer jogador, o jogo termina e o jogador correspondente é declarado vencedor. Isso é feito no método CheckGameOver(), que verifica todas as linhas, colunas e diagonais do tabuleiro.
+
+Questão 05: Verificação de Posição Ocupada
+Descreva o processo pelo qual o programa verifica se uma posição no tabuleiro está ocupada ou livre para jogada.
+R: O programa verifica se uma posição no tabuleiro está ocupada ou livre para jogada verificando se o caractere na posição correspondente na matriz board é um espaço em branco (' '). Se for um espaço em branco, a posição está livre para jogada. Caso contrário, a posição está ocupada.
+
+Questão 06: Condição de Empate
+Quando o jogo da velha termina em empate? Como o programa verifica essa condição?
+R: O jogo da velha termina em empate quando todas as células do tabuleiro estão preenchidas, mas nenhum jogador conseguiu formar uma sequência de três marcações consecutivas em linha, coluna ou diagonal. O programa verifica essa condição verificando se não há mais espaços em branco (' ') no tabuleiro. Se todas as células estiverem preenchidas e nenhuma condição de vitória for atendida, o jogo é declarado empatado.
+
+Questão 07: Identificação de Vencedor em uma Linha 
+Explique como o programa identifica se houve um vencedor em uma linha do tabuleiro.
+R: Para identificar se houve um vencedor em uma linha do tabuleiro, o programa verifica se todas as células na linha possuem a mesma marcação de jogador (X ou O), e se essa marcação não é um espaço em branco (' '). Se todas as células na linha contiverem a mesma marcação e não forem espaços em branco, o jogador correspondente é declarado vencedor naquela linha.
+
+Questão 08: Tratamento de Posição Ocupada 
+O que acontece quando um jogador tenta marcar uma posição já ocupada no tabuleiro? Como o código lida com essa situação?
+R: Quando um jogador tenta marcar uma posição já ocupada no tabuleiro, o código exibe uma mensagem indicando que a posição está ocupada e solicita ao jogador que escolha outra posição para jogar. Isso é feito verificando se a posição desejada no tabuleiro está vazia antes de permitir que o jogador faça sua jogada.
+
+Questão 09: Função DeawBoard ()
+Qual é a finalidade da função DrawBoard() no código? Como ela é implementada?
+R: A função DrawBoard() tem como finalidade desenhar o estado atual do tabuleiro na console, mostrando as marcações dos jogadores (X, O ou espaços em branco) em suas respectivas posições. Ela é implementada usando loops para percorrer todas as células do tabuleiro e exibir as marcações na console, proporcionando uma interface visual do jogo da velha para os jogadores acompanharem o progresso da partida.
+
+Questão 10: Identificação de Vencedor em uma Coluna 
+Descreva o processo pelo qual o programa verifica se houve um vencedor em uma coluna do tabuleiro
+R: Para verificar se houve um vencedor em uma coluna do tabuleiro, o programa verifica se todas as células na coluna têm a mesma marcação de jogador (X ou O) e se não estão vazias. Se todas as células tiverem a mesma marcação e não forem espaços em branco, o jogador correspondente é declarado vencedor naquela coluna.
+
+Questão 11: Utilização de Matrizes 
+Como as matrizes são utilizadas neste código do jogo da velha em C#?
+R: Neste código do jogo da velha em C#, as matrizes são usadas para representar e armazenar o estado do tabuleiro, permitindo a visualização do jogo, verificação de condições de vitória e desenho do tabuleiro na console. A matriz board é uma matriz bidimensional que mantém o registro das marcações dos jogadores em suas posições correspondentes.
+
+Questão 12: Manipulação de Caracteres 
+Quais são os caracteres utilizados para representar as jogadas dos jogadores no tabuleiro? Como eles são manipulados pelo programa?
+R: Os caracteres utilizados para representar as jogadas dos jogadores no tabuleiro são 'X' e 'O'. Eles são manipulados pelo programa ao serem armazenados na matriz board nas posições escolhidas pelos jogadores, verificados para determinar condições de vitória ou empate, e exibidos na console durante o desenho do tabuleiro.
+
+Questão 13: Estrutura do Loop Principal
+Explique como o loop principal do jogo da velha é estruturado no código em C#.
+R: O loop principal do jogo da velha é um loop infinito while(true) que executa continuamente o jogo até que uma condição de término seja atendida. Dentro do loop, o programa exibe o estado atual do tabuleiro, obtém a entrada do jogador para sua jogada, verifica se a posição escolhida está vazia, realiza a jogada do jogador, verifica se o jogo terminou e, em caso afirmativo, exibe o resultado e encerra o jogo. Essa estrutura garante a execução contínua do jogo até que um resultado seja alcançado.
+
+Questão 14: Interação como Usuário
+Como o programa interage com o usuário durante o jogo? Descreva os passos de interação.
+R: nnDurante o jogo, o programa interage com o usuário exibindo o estado atual do tabuleiro, solicitando ao jogador sua jogada, validando a entrada do jogador, realizando a jogada, verificando se o jogo terminou e exibindo o resultado. Essa interação permite que os jogadores façam suas jogadas e acompanhem o progresso do jogo até que haja um resultado final (vitória de um jogador ou empate).
+
+Questão 15: Modularização do Código
+O código do jogo da velha em C# é modularizado? Se sim, como ele está dividido em diferentes partes?
+R: Sim, o código do jogo da velha em C# está modularizado. Ele é dividido em diferentes partes através de funções que realizam tarefas específicas, incluindo inicialização do tabuleiro, desenho do tabuleiro na console, interação com o usuário (como solicitar jogadas e exibir mensagens), e verificação do estado do jogo (como verificar se o jogo terminou). Essa divisão torna o código mais organizado, fácil de entender e de manter.
+
+Questão 16: Lógica de Verificação de Vitória
+Quais são os principais passos da lógica implementada para verificar se um jogador venceu o jogo? 
+R: A lógica de verificação de vitória no jogo da velha envolve checar se um jogador possui três marcações consecutivas em linha, coluna ou diagonal. Se nenhum jogador alcançar essa condição, o jogo é declarado empatado se todas as células estiverem preenchidas.
+
+Questão 17: Tratamento de Entradas Inválidas 
+Como o programa lida com entradas inválidas fornecidas pelos jogadores? 
+R: O programa lida com entradas inválidas fornecidas pelos jogadores verificando se as coordenadas fornecidas estão dentro dos limites válidos do tabuleiro (0 a 2). Se as coordenadas estiverem fora desses limites ou se a entrada não for um número válido, o programa exibe uma mensagem de erro indicando que a entrada é inválida e solicita ao jogador que insira novamente as coordenadas. Essa validação é realizada dentro de um loop no qual o programa continua a solicitar novas entradas até que uma entrada válida seja fornecida pelo jogador.
+
+Questão 18: Melhorias Possíveis 
+Identifique uma ou mais áreas do código que poderiam ser melhoradas em termos de eficiência ou legibilidade.
+R: Uma área do código que poderia ser melhorada em termos de legibilidade é a verificação de vitória dentro da função CheckGameOver(). Refatorar essa verificação em uma abordagem mais genérica e modular poderia reduzir a repetição de código e melhorar a legibilidade, tornando-o mais conciso e fácil de entender e manter.
+
+Questão 19: Potencias extensões do Jogo
+Quais seriam algumas extensões interessantes que poderiam ser asicionadas ao jogo da velha em C#? Como você começaria a implementá-las? 
+R: Algumas extensões interessantes para o jogo da velha em C# incluem modos de jogador contra computador e jogo online, personalização do tabuleiro, histórico de jogadas, efeitos sonoros e animações. Para implementá-las, seria necessário planejamento e design, atualização do código existente, implementação das extensões, testes abrangentes e melhoria contínua com base no feedback dos usuários.
+
+Questão 20: Aprendizados e Desafios
+Quais foram os principais aprendizados e desafios ao explorar e entender o código do jogo da velha em C#?
+R: Explorar e entender o código do jogo da velha em C# proporcionou aprendizados sobre a lógica do jogo, programação em C#, modularização e validação de entradas. Os desafios incluíram compreender a verificação de condições de jogo, refatoração de código e planejamento de extensões. Em resumo, a experiência foi educativa e desafiadora, proporcionando um melhor entendimento de programação e desenvolvimento de software.
+
+Questão 21: Prévia do Código
+Após responder o questionário, envie a prévia do código do exemplo que foi fornecido.
+(PREVIA PEDRO E GABRIEL)
+
+sing System;
+
+class Program
+{
+    static char[,] board = new char[3, 3]; // Tabuleiro do jogo
+
+    static void Main(string[] args)
+    {
+        InitializeBoard(); // Inicializa o tabuleiro
+
+        bool playerX = true; // Variável para alternar entre jogadores
+
+        while (true)
+        {
+            DrawBoard(); // Desenha o tabuleiro atual
+
+            // Obtém a entrada do jogador atual
+            Console.WriteLine((playerX ? "Jogador X" : "Jogador DGUA ALC") + ", é sua vez. Digite a linha (0-2) e coluna (0-2) separadas por espaço: ");
+            string[] input = Console.ReadLine().Split(' ');
+
+            // Converte a entrada do jogador para linha e coluna
+            int row = int.Parse(input[0]);
+            int col = int.Parse(input[1]);
+
+            // Verifica se a posição está vazia e realiza a jogada
+            if (board[row, col] == ' ')
+            {
+                board[row, col] = playerX ? 'X' : 'D'; // Coloca X ou D na posição escolhida
+                playerX = !playerX; // Alterna para o próximo jogador
+            }
+            else
+            {
+                Console.WriteLine("Posição ocupada. Tente novamente.");
+            }
+
+            // Verifica se o jogo terminou
+            if (CheckGameOver())
+            {
+                DrawBoard(); // Desenha o tabuleiro final
+                Console.WriteLine("Fim de jogo!");
+                break;
+            }
+        }
+    }
+
+    // Inicializa o tabuleiro com espaços em branco
+    static void InitializeBoard()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                board[i, j] = ' ';
+            }
+        }
+    }
+
+    // Desenha o tabuleiro atual
+    static void DrawBoard()
+    {
+        Console.WriteLine("  0 1 2");
+        for (int i = 0; i < 3; i++)
+        {
+            Console.Write(i + " ");
+            for (int j = 0; j < 3; j++)
+            {
+                Console.Write(board[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    // Verifica se o jogo terminou
+    static bool CheckGameOver()
+    {
+        // Verifica linhas, colunas e diagonais para determinar o vencedor
+        for (int i = 0; i < 3; i++)
+        {
+            if (board[i, 0] != ' ' && board[i, 0] == board[i, 1] && board[i, 1] == board[i, 2])
+                return true;
+            if (board[0, i] != ' ' && board[0, i] == board[1, i] && board[1, i] == board[2, i])
+                return true;
+        }
+
+        if (board[0, 0] != ' ' && board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2])
+            return true;
+        if (board[0, 2] != ' ' && board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0])
+            return true;
+
+        // Verifica se o tabuleiro está cheio
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (board[i, j] == ' ')
+                    return false; // Ainda há espaços vazios, o jogo não terminou
+            }
+        }
+
+        return true; // O jogo termina em empate se não houver espaços vazios e nenhum jogador vencer
+    }
+}
+
+
+
+
+
+
+
+
+
