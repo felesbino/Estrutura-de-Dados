@@ -1,1 +1,44 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Vetor de inteiros
+        int[] vetor = { 3, 13, 16, 25, 26, 28, 34, 44, 47, 5, 6, 8, 15, 17, 21, 23, 27, 38, 45, 49, 7, 9, 10, 11, 14, 42 };
+
+        // Encontra o segundo maior valor no vetor
+        int segundoMaior = EncontrarSegundoMaior(vetor);
+
+        Console.WriteLine("O segundo maior valor no vetor é: " + segundoMaior);
+    }
+
+    static int EncontrarSegundoMaior(int[] vetor)
+    {
+        // Verifica se o vetor tem pelo menos dois elementos
+        if (vetor.Length < 2)
+        {
+            throw new ArgumentException("O vetor deve ter pelo menos dois elementos");
+        }
+
+        int maior = int.MinValue;
+        int segundoMaior = int.MinValue;
+
+        // Percorre o vetor para encontrar o maior e o segundo maior valores
+        foreach (int valor in vetor)
+        {
+            if (valor > maior)
+            {
+                segundoMaior = maior;
+                maior = valor;
+            }
+            else if (valor > segundoMaior && valor != maior)
+            {
+                segundoMaior = valor;
+            }
+        }
+
+        return segundoMaior;
+    }
+}
 
