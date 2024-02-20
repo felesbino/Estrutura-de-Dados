@@ -1,62 +1,61 @@
-Qual é o tipo de dados da propriedade Tab na classe Tabuleiro?
-
+1- Qual é o tipo de dados da propriedade Tab na classe Tabuleiro?
 C) char
-Qual é a finalidade da variável Jogadas na classe Tabuleiro?
 
+2- Qual é a finalidade da variável Jogadas na classe Tabuleiro?
 B) Contar o número de jogadas feitas durante o jogo.
-Como é atualizado o valor da variável Jogador para alternar entre 'X' e 'O' a cada jogada?
 
+3- Como é atualizado o valor da variável Jogador para alternar entre 'X' e 'O' a cada jogada?
 D) Com base em uma estrutura condicional no método Jogar().
-Por que o método VerificarVitoria() retorna void?
 
+4- Por que o método VerificarVitoria() retorna void?
 A) Porque não há necessidade de retornar um valor.
-Qual é a função do método Convert.ToInt32(Console.ReadLine()) na linha onde é lido o valor da posição escolhida pelo jogador?
 
+5- Qual é a função do método Convert.ToInt32(Console.ReadLine()) na linha onde é lido o valor da posição escolhida pelo jogador?
 A) Converte a entrada do usuário para um número inteiro.
-Qual é a condição para sair do loop principal do jogo?
 
+6-Qual é a condição para sair do loop principal do jogo?
 B) Quando um jogador ganha.
-Qual método é responsável por verificar se houve vitória em uma linha, coluna ou diagonal?
 
+7-Qual método é responsável por verificar se houve vitória em uma linha, coluna ou diagonal?
 A) VerificarVitoria()
-O que acontece se um jogador escolher uma posição inválida durante o jogo?
 
+8- O que acontece se um jogador escolher uma posição inválida durante o jogo?
 C) O jogador é solicitado a jogar novamente.
-O que acontece se nenhum jogador vencer e todas as posições do tabuleiro estiverem preenchidas?
 
+9-O que acontece se nenhum jogador vencer e todas as posições do tabuleiro estiverem preenchidas?
 C) É declarado empate.
-Qual é a função do método GerarTabuleiro()?
 
+10-Qual é a função do método GerarTabuleiro()?
 C) Inicializar o tabuleiro com os números de 1 a 9.
-Como é determinado o próximo jogador a fazer uma jogada?
 
+11-Como é determinado o próximo jogador a fazer uma jogada?
 C) É alternado entre X e O a cada jogada.
-Qual é o tamanho do tabuleiro do jogo da velha?
 
+12-Qual é o tamanho do tabuleiro do jogo da velha?
 B) 3x3
-Quantos jogadores estão envolvidos no jogo da velha?
 
+13-Quantos jogadores estão envolvidos no jogo da velha?
 B) 2
-Qual é o caractere usado para representar as jogadas do jogador X?
 
+14-Qual é o caractere usado para representar as jogadas do jogador X?
 A) 'X'
-Onde é inicializado o tabuleiro do jogo da velha?
 
+15-Onde é inicializado o tabuleiro do jogo da velha?
 C) No construtor da classe Tabuleiro()
-Qual é o propósito do método ImprimirTabuleiro() no código?
 
+16-Qual é o propósito do método ImprimirTabuleiro() no código?
 B) Imprimir o estado atual do tabuleiro na tela.
-No método Jogar(), por que é necessário o uso do Convert.ToInt32(Console.ReadLine()) na leitura da posição escolhida pelo jogador?
 
+17-No método Jogar(), por que é necessário o uso do Convert.ToInt32(Console.ReadLine()) na leitura da posição escolhida pelo jogador?
 A) Para garantir que o valor seja interpretado como um número inteiro.
-Como é determinado o vencedor no método VerificarVitoria() quando há uma linha vitoriosa?
 
+18-Como é determinado o vencedor no método VerificarVitoria() quando há uma linha vitoriosa?
 B) Verificando se todos os elementos de uma linha são iguais.
-Por que é necessário o uso do loop while (true) durante a validação da posição escolhida pelo jogador?
 
+19-Por que é necessário o uso do loop while (true) durante a validação da posição escolhida pelo jogador?
 A) Para garantir que o jogo continue até que uma posição válida seja escolhida.
-Qual é a finalidade do método Jogar() no código do jogo da velha?
 
+20-Qual é a finalidade do método Jogar() no código do jogo da velha?
 B) Alternar entre os jogadores X e O a cada jogada.
 
 
