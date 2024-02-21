@@ -1,0 +1,148 @@
+using System;
+
+namespace Jogo_Da_Velha_Pedro_Gabriel
+{
+    class Program
+    {
+        static char[,] tabuleiro = new char[3, 3];
+        static char jogadorAtual = 'X';
+        static bool jogoAcabou = false;
+
+        static void Main(string[] args)
+        {
+            InicializarTabuleiro();
+
+            while (!jogoAcabou)
+            {
+                ExibirTabuleiro();
+                FazerJogada();
+                VerificarFimDeJogo();
+                AlternarJogador();
+            }
+        }
+
+        static void InicializarTabuleiro()
+        {
+            // Inicializa o tabuleiro com '-' em todas as posições
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    tabuleiro[i, j] = '-';
+                }
+            }
+        }
+
+        static void ExibirTabuleiro()
+        {
+            // Exibe o tabuleiro na tela com "PG" como marca d'água
+            Console.WriteLine("-----");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (tabuleiro[i, j] == '-')
+                    {
+                        Console.Write("PG "); // Adiciona "PG" como marca d'água nas células vazias
+                    }
+                    else
+                    {
+                        Console.Write(tabuleiro[i, j] + " "); // Adiciona um espaço entre cada célula para melhor visualização
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("-----");
+        }
+
+        static void FazerJogada()
+        {
+            // Solicita que o jogador atual faça sua jogada
+            Console.WriteLine("Jogador " + jogadorAtual + ", faça sua jogada.");
+
+            Console.WriteLine("Digite a linha (0, 1 ou 2): ");
+            int linha = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Digite a coluna (0, 1 ou 2): ");
+            int coluna = Convert.ToInt32(Console.ReadLine());
+
+            if (linha < 0 || linha > 2 || coluna < 0 || coluna > 2)
+            {
+                // Verifica se a jogada está dentro dos limites do tabuleiro
+                Console.WriteLine("Posição inválida. Tente novamente.");
+                FazerJogada();
+            }
+            else if (tabuleiro[linha, coluna] == '-')
+            {
+                // Verifica se a posição escolhida está vazia
+                tabuleiro[linha, coluna] = jogadorAtual;
+            }
+            else
+            {
+                Console.WriteLine("Essa posição já está ocupada. Tente novamente.");
+                FazerJogada();
+            }
+        }
+
+        static void VerificarFimDeJogo()
+        {
+            // Verifica se houve um vencedor ou se o jogo empatou
+            if (VerificarVencedor())
+            {
+                ExibirTabuleiro();
+                Console.WriteLine("Jogador " + jogadorAtual + " venceu!");
+                jogoAcabou = true;
+            }
+            else if (VerificarEmpate())
+            {
+                ExibirTabuleiro();
+                Console.WriteLine("O jogo empatou.");
+                jogoAcabou = true;
+            }
+        }
+
+        static bool VerificarVencedor()
+        {
+            // Verifica se há um vencedor nas linhas, colunas ou diagonais
+            for (int i = 0; i < 3; i++)
+            {
+                if (tabuleiro[i, 0] == jogadorAtual && tabuleiro[i, 1] == jogadorAtual && tabuleiro[i, 2] == jogadorAtual)
+                {
+                    return true;
+                }
+                if (tabuleiro[0, i] == jogadorAtual && tabuleiro[1, i] == jogadorAtual && tabuleiro[2, i] == jogadorAtual)
+                {
+                    return true;
+                }
+            }
+            if ((tabuleiro[0, 0] == jogadorAtual && tabuleiro[1, 1] == jogadorAtual && tabuleiro[2, 2] == jogadorAtual) ||
+                (tabuleiro[0, 2] == jogadorAtual && tabuleiro[1, 1] == jogadorAtual && tabuleiro[2, 0] == jogadorAtual))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        static bool VerificarEmpate()
+        {
+            // Verifica se o jogo terminou em empate
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (tabuleiro[i, j] == '-')
+                    {
+                        return false; // Se houver pelo menos uma célula vazia, o jogo não terminou em empate
+                    }
+                }
+            }
+            return true;
+        }
+
+        static void AlternarJogador()
+        {
+            // Alterna o jogador atual entre 'X' e 'O'
+            jogadorAtual = (jogadorAtual == 'X') ? 'O' : 'X';
+        }
+    }
+}
